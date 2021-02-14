@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "github-jobs",
+  "name": "github-jobs job finder",
   "icons": [
     {
       "src": "favicon.ico",
