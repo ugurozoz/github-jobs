@@ -1,12 +1,17 @@
-import Layout from './hoc/layout/layout';
+import Layout from './hoc/Layout/Layout';
+import Search from './components/Search/Search';
 import './App.css';
 
-function App() {
+const app = () => {
   return (
-    <div>
-      <Layout></Layout>
+    <div className='Container'>
+      <Layout>
+        <Search/>
+        <aside className='Filter'>Left Filter Component</aside>
+        <section className='Joblist'>Jobs</section>
+      </Layout>
     </div>
   );
-}
+};
 
-export default App;
+export default app;

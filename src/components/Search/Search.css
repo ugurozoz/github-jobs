@@ -1,0 +1,6 @@
+.Search {
+  width: 100%;
+  height: 138px;
+  background-image: url('/src/assets/search-background.png');
+  border-radius: 8px;
+}
