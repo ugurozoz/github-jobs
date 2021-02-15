@@ -1,3 +1,46 @@
-.Search-Input{
-  
+.Search-Input {
+  width: calc(100% - 36px);
+  background-color: white;
+  border-radius: 4px;
+  height: 55px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 826px) {
+  .Search-Input {
+    width: 790px;
+  }
+}
+.Search-Input__briefcase-icon{
+  width: 15px;
+  height: 15px;
+  background: url('../../../assets/github-jobs-spirte.png');
+  background-size: 500px 300px;
+  margin: 0 0 0 17.5px;
+}
+
+.Search-Input__text {
+  width:calc(100% - 154px);
+  border: none;
+  padding: 0 0px;
+  box-sizing: border-box;
+  height: 55px;
+  margin: 0 0 0 9.5px;
+
+}
+
+.Search-Input__submit {
+  background: #1e86ff;
+  position: absolute;
+  width: 104px;
+  height: 47px;
+  right: 5px;
+  top:4px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  color:#fff;
+  font-weight: 500;
 }

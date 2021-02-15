@@ -1,0 +1,28 @@
+.job-type input{
+  height: 18px;
+  width: 18px;
+  margin: 0 12.5px 0 0;
+}
+
+
+.city-radio{
+  margin-bottom: 18.67px;
+}
+
+.city-radio input {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #b9bdcf;
+  box-sizing: border-box;
+  margin: 0 12.5px 0 0;
+}
+
+.city-radio label,.job-type label {
+  font-size: 14px;
+  line-height: 18px;
+  height: 18px;
+  display: flex;
+}
+
+
+

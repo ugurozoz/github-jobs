@@ -3,8 +3,9 @@ import './SearchInput.css';
 const searchInput = () => {
   return (
     <div className='Search-Input'>
-      <input type='text' />
-      <input type='submit' />
+      <span className="Search-Input__briefcase-icon"></span>
+      <input className="Search-Input__text" type='text' placeholder="Title, companies, experti..." />
+      <input className="Search-Input__submit" type='submit' />
     </div>
   );
 };
