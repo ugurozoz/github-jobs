@@ -1,6 +1,7 @@
 import Layout from './hoc/Layout/Layout';
 import Search from './components/Search/Search';
 import Filters from './components/Filters/Filters';
+import Joblist from './components/Joblist/Joblist';
 import './App.css';
 
 const app = () => {
@@ -10,8 +11,7 @@ const app = () => {
         <Search />
         <section className='Body'>
           <Filters />
-
-          <section className='Joblist'>Jobs</section>
+          <Joblist />
         </section>
       </Layout>
     </div>

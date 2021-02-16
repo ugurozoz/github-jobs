@@ -1,0 +1,96 @@
+.JoblistItem {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  display: flex;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-bottom: 32px;
+}
+
+.JoblistItem .company__logo {
+  width: 90px;
+  height: 90px;
+  margin: 0 16px 0 0;
+}
+.JoblistItem .company-name {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+}
+.JoblistItem .job__title {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.JoblistItem .job-info {
+  width: calc(100% - 106px);
+}
+
+.JoblistItem .job__type {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  height: 26px;
+  border: 1px solid #334680;
+box-sizing: border-box;
+border-radius: 4px;
+padding: 0 6px;
+color: #334680;
+}
+
+.type-loc-time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job__right-bottom {
+  display: flex;
+  height: 26px;
+  align-items: center;
+}
+
+.job__loc,
+.job__time {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  color:#B7BCCE;
+  height: 15px;
+  padding-left: 22.5px;
+  position: relative;
+}
+
+.job__time {
+  margin-left: 28.5px;
+}
+
+.job__loc:before,
+.job__time:before{
+  content:"";
+  position: absolute;
+  background: url('../../../assets/github-jobs-spirte.png');
+  width: 15px;
+  height: 15px;
+  left: 0px;
+  top: 0px;
+}
+
+.job__loc:before { background-position: -15px 0; background-size: 500px auto;}
+.job__time:before { background-position: -30px 0; background-size: 500px auto;}
+
+

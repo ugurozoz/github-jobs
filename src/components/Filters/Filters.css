@@ -1,11 +1,70 @@
-.job-type input{
+.Filters {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .Filters {
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Filters {
+    width: 380px;
+  }
+}
+
+.job-type {
+  margin: 0px 0 35px 0;
+}
+
+.job-type input {
   height: 18px;
   width: 18px;
   margin: 0 12.5px 0 0;
 }
 
+.Filter-row.location-search {
+  margin-bottom: 28.5px;
+}
 
-.city-radio{
+.Filter-row .location-search__heading {
+  line-height: 21px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.location-search__inputs {
+  height: 48px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.globe-icon {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: url('../../assets/github-jobs-spirte.png');
+  background-position: -30px 0;
+  background-size:500px auto;
+  margin: 0 16px 0 14px;
+  
+}
+
+.input-location {
+  height: 48px;
+  border: none;
+  padding: 0 0 0 0;
+  width: calc(100% - 45px);
+  border-radius: 4px;
+}
+
+.city-radio {
   margin-bottom: 18.67px;
 }
 
@@ -17,12 +76,10 @@
   margin: 0 12.5px 0 0;
 }
 
-.city-radio label,.job-type label {
+.city-radio label,
+.job-type label {
   font-size: 14px;
   line-height: 18px;
   height: 18px;
   display: flex;
 }
-
-
-
