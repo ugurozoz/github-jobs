@@ -1,0 +1,96 @@
+.Spinner-Container{
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  top:0px;
+  height: calc(100vh - 270px);
+  /* background-color: rgba(255,255, 255, 0.8); */
+}
+
+.Spinner{
+  width:5px;
+  height: 10px;
+  background-color:#24292e;
+  position: relative;
+  transform-origin:  2.5px 30px;
+  animation: mymove linear 1.5s infinite;
+}
+
+.Spinner:before,.Spinner:after{
+  content: "";
+  width:5px;
+  height: 10px;
+  background-color: #24292e;
+  position: absolute;
+  transform-origin: 2.5px 30px;
+}
+
+.Spinner:before{
+  transform: rotateZ(120deg);
+}
+
+.Spinner:after{
+  transform: rotateZ(240deg);
+}
+
+.Spinner span{
+  position: absolute;
+  width:5px;
+  height: 10px;
+  background-color: #24292e;
+  /* display: none; */
+  transform-origin:  2.5px 30px;
+}
+
+
+.Spinner span:before,.Spinner span:after{
+  content: "";
+  width:5px;
+  height: 10px;
+  background-color: #24292e;
+  position: absolute;
+  transform-origin:  2.5px 30px;
+}
+
+.Spinner span:before{
+  transform: rotateZ(-120deg);
+  background-color: inherit;
+}
+
+.Spinner span:after{
+  transform: rotateZ(120deg);
+  background-color: inherit;
+}
+
+
+.Spinner span:nth-child(1){
+  transform: rotateZ(30deg);
+  background-color:#24292e;
+
+}
+
+.Spinner span:nth-child(2){
+  transform: rotateZ(60deg);
+  background-color:#24292e;
+
+}
+
+.Spinner span:nth-child(3){
+  transform: rotateZ(90deg);
+  background-color:#24292e;
+
+}
+
+
+
+@keyframes mymove {
+  from {transform: rotateZ(0deg);}
+  to {transform: rotateZ(360deg);}
+}
+
+
+
+
+
