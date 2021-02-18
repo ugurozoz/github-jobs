@@ -1,16 +1,16 @@
 .Joblist {
-  width: 100%; }
+  width: 100%;
+  position: relative;
+}
 
 @media screen and (min-width: 768px) {
   .Joblist {
-    width:calc(100% - 282px) ;
-
+    width: calc(100% - 282px);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .Joblist {
-    width:calc(100% - 412px) ;
-
+    width: calc(100% - 412px);
   }
 }

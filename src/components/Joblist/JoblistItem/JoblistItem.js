@@ -9,8 +9,7 @@ const joblistItem = (props) => {
 
   const jobCreated = new Date(props.created);
   const elapsed = Date.now() - jobCreated;
-  // console.log(elapsed);
-
+  
   return (
     <div className='JoblistItem'>
       <div className='company__logo'>

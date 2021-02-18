@@ -1,5 +1,4 @@
 import * as ActionType from '../action-types/';
-import { updateObject } from '../../shared/utility';
 
 const initialState = {
   loading: false,

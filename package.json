@@ -40,5 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy" : "https://jobs.github.com"
+  "proxy" : "http://localhost:3000/"
 }

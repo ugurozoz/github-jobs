@@ -7,7 +7,6 @@ import { store } from './state';
 import './index.css';
 import App from './App';
 
-//console.log(store)
 
 const app = (
   <Provider store={store}>
