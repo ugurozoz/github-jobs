@@ -32,7 +32,7 @@ export const fetchJobs = (srcParam) => {
     axios
       .get(`${apiURL}${searchParam}`, { crossdomain: true })
       .then((response) => {
-        console.log("TAKEN GITHUB DATA",response.data)
+        //console.log('TAKEN GITHUB DATA', response.data);
         dispatch(fetchJobsSuccess(response.data));
       })
       .catch((error) => {
@@ -41,5 +41,19 @@ export const fetchJobs = (srcParam) => {
   };
 };
 
-// type: ActionType.FETCH_JOBS,
-//     srcParam: srcParam,
+export const setJobTypeFilter = (value) => {
+  return {
+    type: ActionType.SET_JOBTYPE_FILTER,
+    payload: value,
+  };
+};
+
+
+export const setLocationFilter = (value) => {
+  return {
+    type: ActionType.SET_LOCATION_FILTER,
+    payload: value,
+  };
+};
+
+

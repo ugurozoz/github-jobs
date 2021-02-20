@@ -1,6 +1,43 @@
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useActions } from '../../hooks/use-actions';
+import { CitiesRadios } from './CitiesRadios/CitiesRadios';
 import './Filters.css';
 
-const filters = () => {
+const Filters = () => {
+  const [state, setState] = useState({
+    isLocationInputEmpty: true,
+  });
+
+  console.log(state);
+
+  const filterState = useSelector((state) => {
+    return state.filters;
+  });
+
+  const { setJobTypeFilter, setLocationFilter } = useActions();
+
+  useEffect(() => {
+    console.log('USEEFFECT CALLED');
+  }, [filterState]);
+
+  const jobTypeChangeHandler = () => {
+    setJobTypeFilter(!filterState.full);
+  };
+
+  const locationChangeHandler = (event) => {
+    setLocationFilter(event.target.value);
+    if (event.target.value.length !== 0) {
+      setState({ isLocationInputEmpty: false });
+    } else {
+      setState({ isLocationInputEmpty: true });
+    }
+  };
+
+  const citiesChangeHandler = (event) => {
+    setLocationFilter(event.target.value);
+  };
+
   return (
     <aside className='Filters'>
       <div className='Filter-row job-type'>
@@ -9,51 +46,34 @@ const filters = () => {
             type='checkbox'
             name='job-type-fulltime'
             id='job-type-fulltime'
+            onChange={jobTypeChangeHandler}
           />
           Full time
         </label>
       </div>
       <div className='Filter-row location-search'>
-        <strong className="location-search__heading">LOCATION</strong>
-        <div className="location-search__inputs">
-          <span className="globe-icon"></span>
-          <input type='text' placeholder='City, state, zip code or country' className="input-location" />
-          {/* <input type='submit'  className="submit-location" /> */}
+        <strong className='location-search__heading'>LOCATION</strong>
+        <div className='location-search__inputs'>
+          <span className='globe-icon'></span>
+          <input
+            value={filterState.location}
+            type='text'
+            placeholder='City, state, zip code or country'
+            className='input-location'
+            onChange={locationChangeHandler}
+          />
+          <input type='submit'  className="submit-location" />
         </div>
       </div>
 
-      <div className='Filter-row city-select-radios'>
-        <div className='city-radio'>
-          <label htmlFor='input0'>
-            <input type='radio' id='input0' name='city-radie' />
-            London
-          </label>
-          <span></span>
-        </div>
-        <div className='city-radio'>
-          <label htmlFor='input1'>
-            <input type='radio' id='input1' name='city-radie' />
-            Amsterdam
-          </label>
-          <span></span>
-        </div>
-        <div className='city-radio'>
-          <label htmlFor='input2'>
-            <input type='radio' id='input2' name='city-radie' />
-            New York
-          </label>
-          <span></span>
-        </div>
-        <div className='city-radio'>
-          <label htmlFor='input3'>
-            <input type='radio' id='input3' name='city-radie' />
-            Berlin
-          </label>
-          <span></span>
-        </div>
-      </div>
+      {
+        <CitiesRadios
+          changeHandler={citiesChangeHandler}
+          locationEnteredViaInput={state.isLocationInputEmpty}
+        />
+      }
     </aside>
   );
 };
 
-export default filters;
+export default Filters;
