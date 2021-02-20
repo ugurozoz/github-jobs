@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useActions } from '../../hooks/use-actions';
 import { CitiesRadios } from './CitiesRadios/CitiesRadios';
@@ -9,29 +9,32 @@ const Filters = () => {
     isLocationInputEmpty: true,
   });
 
-  console.log(state);
+  const locationInput = useRef(null);
 
-  const filterState = useSelector((state) => {
-    return state.filters;
-  });
+  const filterState = useSelector((state) => state.filters);
 
-  const { setJobTypeFilter, setLocationFilter } = useActions();
+  const { setJobTypeFilter, setLocationFilter, fetchJobs } = useActions();
 
   useEffect(() => {
-    console.log('USEEFFECT CALLED');
+    fetchJobs(filterState);
   }, [filterState]);
 
-  const jobTypeChangeHandler = () => {
-    setJobTypeFilter(!filterState.full);
+  const jobTypeChangeHandler = (event) => {
+    setJobTypeFilter(event.target.checked);
   };
 
   const locationChangeHandler = (event) => {
-    setLocationFilter(event.target.value);
     if (event.target.value.length !== 0) {
       setState({ isLocationInputEmpty: false });
     } else {
       setState({ isLocationInputEmpty: true });
     }
+  };
+
+  const locationSubmitHandler = () => {
+    console.log(locationInput);
+    const location = locationInput.current.value;
+    setLocationFilter(location);
   };
 
   const citiesChangeHandler = (event) => {
@@ -56,20 +59,22 @@ const Filters = () => {
         <div className='location-search__inputs'>
           <span className='globe-icon'></span>
           <input
-            value={filterState.location}
+            ref={locationInput}
             type='text'
             placeholder='City, state, zip code or country'
             className='input-location'
             onChange={locationChangeHandler}
           />
-          <input type='submit'  className="submit-location" />
+          <button className='submit-location' onClick={locationSubmitHandler}>
+            Submit
+          </button>
         </div>
       </div>
 
       {
         <CitiesRadios
           changeHandler={citiesChangeHandler}
-          locationEnteredViaInput={state.isLocationInputEmpty}
+          locationInputEmpty={state.isLocationInputEmpty}
         />
       }
     </aside>

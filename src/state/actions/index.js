@@ -27,6 +27,22 @@ export const fetchJobs = (srcParam) => {
   return (dispatch) => {
     dispatch(fetchJobsStart());
     //https://jobs.github.com
+    let paramString = ``;
+    if (srcParam) {
+      
+      for (let key of Object.keys(srcParam)) {
+        if (srcParam[key]) {
+          paramString += `${key}=${srcParam[key]}&`;
+        }
+      }
+      // Remove last ampersand
+      let paramArray = paramString.split('').slice(0,-1);      
+      
+      paramString=paramArray.join('');
+    }
+
+    console.log(paramString)
+
     const apiURL = '/positions.json';
     const searchParam = srcParam ? `?search=${srcParam}` : '';
     axios
@@ -48,12 +64,9 @@ export const setJobTypeFilter = (value) => {
   };
 };
 
-
 export const setLocationFilter = (value) => {
   return {
     type: ActionType.SET_LOCATION_FILTER,
     payload: value,
   };
 };
-
-

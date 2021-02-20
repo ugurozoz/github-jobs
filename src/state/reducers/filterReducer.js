@@ -5,11 +5,11 @@ const initialState = {
   location: '',
   lat: null,
   long: null,
-  full: false,
+  full_time: false,
 };
 
 const setJobTypeFilter = (state, action) => {
-  return { ...state, full: action.payload };
+  return { ...state, full_time: action.payload };
 };
 
 const setLocationFilter = (state, action) => {

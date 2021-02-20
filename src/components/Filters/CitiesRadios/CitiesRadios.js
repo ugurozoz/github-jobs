@@ -27,7 +27,7 @@ export const CitiesRadios = (props) => {
     );
   });
 
-  console.log('CITIES RADIOS RERENDERED');
+  //console.log('CITIES RADIOS RERENDERED');
 
   return (
     <div
