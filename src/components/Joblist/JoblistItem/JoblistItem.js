@@ -1,7 +1,6 @@
 import './JoblistItem.css';
 import companyLogo from './company-logo.jpg';
 
-const LogoImage = require('./company-logo.jpg');
 
 const joblistItem = (props) => {
   const one_day = 1000 * 60 * 60 * 24;
@@ -13,7 +12,7 @@ const joblistItem = (props) => {
   return (
     <div className='JoblistItem'>
       <div className='company__logo'>
-        <img src={companyLogo} />
+        <img src={companyLogo} alt={props.companyName} />
       </div>
       <div className='job-info'>
         <div className='company-name'>{props.companyName}</div>

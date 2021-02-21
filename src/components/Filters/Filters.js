@@ -32,9 +32,10 @@ const Filters = () => {
   };
 
   const locationSubmitHandler = () => {
-    console.log(locationInput);
-    const location = locationInput.current.value;
-    setLocationFilter(location);
+    if (locationInput.current.value) {
+      const location = locationInput.current.value;
+      setLocationFilter(location);
+    }
   };
 
   const citiesChangeHandler = (event) => {

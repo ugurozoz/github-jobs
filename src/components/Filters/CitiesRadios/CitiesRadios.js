@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export const CitiesRadios = (props) => {
   const [cities, setCities] = useState([
@@ -27,7 +27,7 @@ export const CitiesRadios = (props) => {
     );
   });
 
-  //console.log('CITIES RADIOS RERENDERED');
+ 
 
   return (
     <div

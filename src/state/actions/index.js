@@ -41,10 +41,12 @@ export const fetchJobs = (srcParam) => {
       paramString=paramArray.join('');
     }
 
-    console.log(paramString)
+    
 
     const apiURL = '/positions.json';
-    const searchParam = srcParam ? `?search=${srcParam}` : '';
+    const searchParam = srcParam ? `?${paramString}` : '';
+    console.log(`${apiURL}${searchParam}`)
+
     axios
       .get(`${apiURL}${searchParam}`, { crossdomain: true })
       .then((response) => {
@@ -67,6 +69,13 @@ export const setJobTypeFilter = (value) => {
 export const setLocationFilter = (value) => {
   return {
     type: ActionType.SET_LOCATION_FILTER,
+    payload: value,
+  };
+};
+
+export const setSearchTermFilter = (value) => {
+  return {
+    type: ActionType.SET_SEARCHTERM_FILTER,
     payload: value,
   };
 };

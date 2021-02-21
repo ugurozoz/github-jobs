@@ -16,12 +16,19 @@ const setLocationFilter = (state, action) => {
   return { ...state, location: action.payload };
 };
 
+const setSearchTermFilter = (state, action) => {
+  return { ...state, description: action.payload };
+};
+
 const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.SET_JOBTYPE_FILTER:
       return setJobTypeFilter(state, action);
     case ActionType.SET_LOCATION_FILTER:
       return setLocationFilter(state, action);
+    case ActionType.SET_SEARCHTERM_FILTER:
+      return setSearchTermFilter(state, action);
+
     default:
       return state;
   }
