@@ -28,27 +28,26 @@ export const fetchJobs = (srcParam) => {
     dispatch(fetchJobsStart());
     //https://jobs.github.com
     let paramString = ``;
-    if (srcParam) {
-      
+    if (srcParam) {      
       for (let key of Object.keys(srcParam)) {
         if (srcParam[key]) {
           paramString += `${key}=${srcParam[key]}&`;
         }
       }
       // Remove last ampersand
-      let paramArray = paramString.split('').slice(0,-1);      
-      
+      let paramArray = paramString.split('').slice(0,-1); 
       paramString=paramArray.join('');
     }
 
     
 
+    //const apiURL = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
     const apiURL = '/positions.json';
     const searchParam = srcParam ? `?${paramString}` : '';
     console.log(`${apiURL}${searchParam}`)
 
     axios
-      .get(`${apiURL}${searchParam}`, { crossdomain: true })
+      .get(`${apiURL}${searchParam}`)
       .then((response) => {
         //console.log('TAKEN GITHUB DATA', response.data);
         dispatch(fetchJobsSuccess(response.data));
