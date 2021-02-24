@@ -42,7 +42,7 @@ export const fetchJobs = (srcParam) => {
     
 
     //const apiURL = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
-    const apiURL = '/positions.json';
+    const apiURL = 'http://localhost:4001/positions.json';
     const searchParam = srcParam ? `?${paramString}` : '';
     console.log(`${apiURL}${searchParam}`)
 
@@ -53,7 +53,7 @@ export const fetchJobs = (srcParam) => {
         dispatch(fetchJobsSuccess(response.data));
       })
       .catch((error) => {
-        dispatch(fetchJobsFail(error));
+        dispatch(fetchJobsFail(error)); 
       });
   };
 };
