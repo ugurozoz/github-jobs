@@ -10,13 +10,18 @@ const SearchInput = () => {
 
   const searchTermInput = useRef(null);
 
-  
-
   const onSubmitHandler = () => {
     if (searchTermInput.current.value) {
-      setSearchTermFilter(searchTermInput.current.value);      
+      setSearchTermFilter(searchTermInput.current.value);
+    } else {
+      setSearchTermFilter('');      
     }
-    
+  };
+
+  const onChangeHandler = () => {
+    if (!searchTermInput.current.value) {
+      setSearchTermFilter(''); 
+    } 
   };
 
   return (
@@ -27,12 +32,16 @@ const SearchInput = () => {
         className='Search-Input__text'
         type='text'
         placeholder='Title, companies, experti...'
+        onChange={onChangeHandler}
       />
       <button
         className='Search-Input__submit'
         type='submit'
         onClick={onSubmitHandler}
-      >Submit</button>
+       
+      >
+        Submit
+      </button>
     </div>
   );
 };

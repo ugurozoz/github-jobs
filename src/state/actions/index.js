@@ -30,6 +30,7 @@ export const fetchJobs = (srcParam) => {
     let paramString = ``;
     if (srcParam) {      
       for (let key of Object.keys(srcParam)) {
+        console.log(key, srcParam[key] )
         if (srcParam[key]) {
           paramString += `${key}=${srcParam[key]}&`;
         }
@@ -41,10 +42,11 @@ export const fetchJobs = (srcParam) => {
 
     
 
-    //const apiURL = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
-    const apiURL = 'http://localhost:4001/positions.json';
-    const searchParam = srcParam ? `?${paramString}` : '';
-    console.log(`${apiURL}${searchParam}`)
+    const apiURL = 'http://localhost:4001/'
+    const searchParam = paramString ? `https://jobs.github.com/positions.json?${paramString}` : 'https://jobs.github.com/positions.json';
+    
+    
+    // console.log(`>>> ${apiURL} --> ${searchParam} --> ${typeof srcParam} `)
 
     axios
       .get(`${apiURL}${searchParam}`)

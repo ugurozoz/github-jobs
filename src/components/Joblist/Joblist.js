@@ -13,7 +13,7 @@ const JobList = () => {
 
   
   const joblist = jobs.jobs.map((job) => {
-    const { company, title, type, location, created_at, id } = job;
+    const { company, title, type, location, created_at, id, company_logo } = job;
     return (
       <JoblistItem
         companyName={company}
@@ -22,6 +22,7 @@ const JobList = () => {
         jobLocation={location}
         created={created_at}
         key={id}
+        companyLogo={company_logo}
       />
     );
   });
