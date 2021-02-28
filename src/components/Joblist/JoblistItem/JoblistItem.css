@@ -7,6 +7,24 @@
   padding: 12px;
   box-sizing: border-box;
   margin-bottom: 32px;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  border:2px solid #fff;
+  transition: all .2s ease-in-out;
+  
+}
+
+.JoblistItem:hover{
+  color: #1e86ff;
+  border:2px solid #1e86ff;
+  background-color:#f0f6fc ;
+  
+
+}
+
+.JoblistItemLink{
+  width: 100%;
 }
 
 .JoblistItem .company__logo {
@@ -40,7 +58,12 @@
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 12px;
+  margin-top: 0;
 }
+
+
+
+
 
 .JoblistItem .job-info {
   width: calc(100% - 106px);

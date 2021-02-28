@@ -16,13 +16,18 @@ const joblistItem = (props) => {
 
   
   return (
-    <div className='JoblistItem'>
+    
+    <a className='JoblistItem' href="#">
+      
       <div className='company__logo'>
         <img src={props.companyLogo} alt={props.companyName} />
       </div>
       <div className='job-info'>
-        <div className='company-name'>{props.companyName}</div>
-        <div className='job__title'>{props.jobTitle}</div>
+        
+        <span className='company-name'>{props.companyName}</span>
+        <p className='job__title'>{props.jobTitle}</p>
+        
+
         <div className='type-loc-time'>
           <div className='job__type'>{props.jobType}</div>
           <div className='job__right-bottom'>
@@ -35,7 +40,10 @@ const joblistItem = (props) => {
 
         <div className='company__name'></div>
       </div>
-    </div>
+      
+    
+      </a>
+      
   );
 };
 
