@@ -1,0 +1,130 @@
+.Detail-Body {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .Detail-Body {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.Left-Column {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .Left-Column {
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Left-Column {
+    width: 380px;
+  }
+}
+
+.back-to-search {
+  padding: 0 0 0 0;
+  border: none;
+  background: none;
+
+  height: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 36px;
+
+  color: #1e86ff;
+}
+
+.back-to-search span {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: url('../../assets/github-jobs-spirte.png') -110px 6px no-repeat;
+  margin-right: 15px;
+}
+
+.Left-Column h2 {
+  height: 20px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.Left-Column__nfo {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #334680;
+}
+
+.Left-Column__nfo a {
+  color: #1e86ff;
+  text-decoration: none;
+}
+
+.Left-Column__nfo a:hover {
+  text-decoration: underline;
+}
+
+.Job-Detail {
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .Job-Detail {
+    width: calc(100% - 282px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Job-Detail {
+    width: calc(100% - 412px);
+  }
+}
+
+.Job-Detail__row {
+  display: flex;
+  margin: 0 0 10px 0;
+}
+.Job-Detail__title {
+  margin: 0 25px 0 0;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #334680;
+}
+.Job-Detail__type {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  height: 26px;
+  border: 1px solid #334680;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0 6px;
+  color: #334680;
+
+}
+
+.Job-Detail__row .job__time{
+  margin: 0 0 0 0;
+}
