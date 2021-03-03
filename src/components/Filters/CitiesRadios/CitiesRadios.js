@@ -10,7 +10,7 @@ export const CitiesRadios = (props) => {
 
   const citylist = cities.map((city, index) => {
     return (
-      <div className='city-radio'>
+      <div className='city-radio' key={city.cityName}>
         <label htmlFor={`city${index}`}>
           <input
             type='radio'
@@ -26,8 +26,6 @@ export const CitiesRadios = (props) => {
       </div>
     );
   });
-
- 
 
   return (
     <div

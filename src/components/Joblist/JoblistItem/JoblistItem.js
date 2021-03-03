@@ -1,5 +1,6 @@
 import './JoblistItem.css';
-import {TimeLabel} from  './timelabel/timelabel';
+import { TimeLabel } from './timelabel/timelabel';
+// import {Link } from "react-router-dom";
 
 
 const joblistItem = (props) => {
@@ -8,7 +9,7 @@ const joblistItem = (props) => {
   
   return (
     
-    <a className='JoblistItem' href="#">
+    <a className='JoblistItem' href={`/${props.jobId}`}>
       
       <div className='company__logo'>
         <img src={props.companyLogo} alt={props.companyName} />

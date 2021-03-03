@@ -23,6 +23,7 @@ const JobList = () => {
         created={created_at}
         key={id}
         companyLogo={company_logo}
+        jobId={id}
       />
     );
   });
