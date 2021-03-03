@@ -69,6 +69,7 @@
   font-size: 14px;
   line-height: 21px;
   color: #334680;
+  overflow-x: hidden;
 }
 
 .Left-Column__nfo a {

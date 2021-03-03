@@ -34,8 +34,11 @@ const Main = () => {
         <h2>HOW TO APPLY</h2>
 
         <div className='Left-Column__nfo'>
-          Please email a copy of your resume and online portfolio to{' '}
-          <a href='#'>wes@kasisto.com</a> & CC <a href='#'>eric@kasisto.com</a>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: jobDetail.how_to_apply,
+            }}
+          ></div>
         </div>
       </aside>
       <section className='Job-Detail'>
