@@ -1,4 +1,4 @@
-import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Layout from './hoc/Layout/Layout';
 import Main from './components/main/main';
 import JobDetail from './components/jobdetail/jobdetail'

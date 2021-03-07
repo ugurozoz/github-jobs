@@ -4,7 +4,7 @@ import { useActions } from '../../../hooks/use-actions';
 import './SearchInput.css';
 
 const SearchInput = () => {
-  const filterState = useSelector((state) => state.filters);
+  // const filterState = useSelector((state) => state.filters);
 
   const { setSearchTermFilter, fetchJobs } = useActions();
 

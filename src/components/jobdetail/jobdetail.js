@@ -3,6 +3,7 @@ import { TimeLabel } from '../Joblist/JoblistItem/timelabel/timelabel';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import imageNotFound from '../../assets/image-not-found.png';
 
 const Main = () => {
   const { id } = useParams();
@@ -51,7 +52,9 @@ const Main = () => {
         </div>
         <div className='Job-Detail__row job-company'>
           <div className='company__logo'>
-            <img src={jobDetail.company_logo} alt={jobDetail.company} />
+            <img src={jobDetail.company_logo ? jobDetail.company_logo :imageNotFound} alt={jobDetail.company} />
+            
+            
           </div>
           <div className='company__nfo'>
             <div className='company__name'>{jobDetail.company}</div>

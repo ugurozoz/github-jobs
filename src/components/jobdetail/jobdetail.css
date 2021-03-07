@@ -2,6 +2,10 @@
   display: block;
 }
 
+.Detail-Body a{
+  color:#1e86ff ;
+}
+
 @media screen and (min-width: 768px) {
   .Detail-Body {
     display: flex;

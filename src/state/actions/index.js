@@ -28,34 +28,40 @@ export const fetchJobs = (srcParam) => {
     dispatch(fetchJobsStart());
     //https://jobs.github.com
     let paramString = ``;
-    if (srcParam) {      
+    if (srcParam) {
       for (let key of Object.keys(srcParam)) {
-        console.log(key, srcParam[key] )
+        console.log(key, srcParam[key]);
         if (srcParam[key]) {
           paramString += `${key}=${srcParam[key]}&`;
         }
       }
       // Remove last ampersand
-      let paramArray = paramString.split('').slice(0,-1); 
-      paramString=paramArray.join('');
+      let paramArray = paramString.split('').slice(0, -1);
+      paramString = paramArray.join('');
     }
 
-    
+    let apiURL = 'http://140.82.34.201:4001/';
+    let searchParam = paramString
+      ? `https://jobs.github.com/positions.json?${paramString}`
+      : 'https://jobs.github.com/positions.json';
 
-    const apiURL = 'http://localhost:4001/'
-    const searchParam = paramString ? `https://jobs.github.com/positions.json?${paramString}` : 'https://jobs.github.com/positions.json';
-    
-    
     // console.log(`>>> ${apiURL} --> ${searchParam} --> ${typeof srcParam} `)
 
     axios
       .get(`${apiURL}${searchParam}`)
       .then((response) => {
-        //console.log('TAKEN GITHUB DATA', response.data);
         dispatch(fetchJobsSuccess(response.data));
       })
       .catch((error) => {
-        dispatch(fetchJobsFail(error)); 
+        apiURL = 'https://cors-anywhere.herokuapp.com/';
+        axios
+          .get(`${apiURL}${searchParam}`)
+          .then((response) => {
+            dispatch(fetchJobsSuccess(response.data));
+          })
+          .catch((error) => {
+            dispatch(fetchJobsFail(error));
+          });
       });
   };
 };
