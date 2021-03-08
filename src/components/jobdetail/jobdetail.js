@@ -16,7 +16,7 @@ const Main = () => {
   const fetchJobDetail = (id) => {
     console.log('FIFI');
     if (id) {
-      const apiURL = 'http://localhost:4001/';
+      let apiURL = 'http://githubjobs.trmov.com/';
       const searchParam = `https://jobs.github.com/positions/${id}.json`;
       axios.get(`${apiURL}${searchParam}`).then((response) => {
         console.log(response.data, 'sadsa');
