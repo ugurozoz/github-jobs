@@ -1,5 +1,6 @@
 import Aux from '../Auxiliary/Auxiliary';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import './Layout.css';
 
 const layout = (props) => {
@@ -7,6 +8,7 @@ const layout = (props) => {
     <Aux>
       <Header />
       <main className={'Main'}>{props.children}</main>
+      <Footer/>
     </Aux>
   );
 };

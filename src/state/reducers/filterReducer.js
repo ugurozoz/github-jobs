@@ -2,7 +2,7 @@ import * as ActionType from '../action-types/';
 
 const initialState = {
   description: '',
-  location: '',
+  location: 'Berlin',
   lat: null,
   long: null,
   full_time: false,

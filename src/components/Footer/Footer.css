@@ -1,0 +1,27 @@
+footer {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #b9bdcf;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  line-height: 40px;
+}
+
+footer a{
+  color: #b9bdcf;
+  text-decoration: none;
+  line-height: 40px;
+
+}
+
+footer a.username {
+  font-weight: 700;
+}
+
