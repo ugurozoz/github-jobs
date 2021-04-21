@@ -40,7 +40,7 @@ export const fetchJobs = (srcParam) => {
       paramString = paramArray.join('');
     }
 
-    let apiURL = 'http://githubjobs.trmov.com/';
+    let apiURL = 'https://githubjobs.trmov.com/';
     let searchParam = paramString
       ? `https://jobs.github.com/positions.json?${paramString}`
       : 'https://jobs.github.com/positions.json';
